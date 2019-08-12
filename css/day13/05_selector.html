@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			#d1{width:400px;height:400px;
+				background:#ff0;
+			}
+			#d1>div{
+				width:200px;height:200px;
+				background:#0ff;
+				margin-bottom:400px;
+			}
+			#d1::after{
+				content:"";
+				display:table;
+			}
+			#d2{
+				border:20px solid #f00;
+			}
+			#d3,#d4,#d5{
+				width:200px;height:200px;
+				background:#0ff;
+				float:left;
+			}
+			#d4,#d5{
+				margin-left:10px;
+			}
+			#d2::after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d2">
+			<div id="d3"></div>
+			<div id="d4"></div>
+			<div id="d5"></div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="d1">
+			<div></div>
+		</div>
+	</body>
+</html>

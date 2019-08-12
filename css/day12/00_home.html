@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			#top{
+				width:900px;height:30px;
+				background:#ddd;
+			}
+			#top>a{
+/*				float:left;*/
+				/*修改元素的显示方式*/
+				display:block;
+				width:100px;height:30px;
+				color:#005aa0;
+				text-decoration:none;
+				font-size:12px;
+				text-align:center;
+				line-height:30px;
+				float:left;
+			}
+			#top>.active{
+				height:32px;
+				background:#fff;
+				border-top:2px solid #f00;
+				margin-top:-2px;
+			}
+			#footer{
+				width:1004px;height:82px;
+				background:#ddd;
+				padding:20px 0;
+				
+			}
+			#footer>div{
+				width:65px;height:80px;
+				float:left;
+				margin:0 93px;
+			}
+			#footer>div>p{
+				margin:0;
+				color:#666;
+				font-size:14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="footer">
+			<div>
+				<img src="icon1.png" alt="">
+				<p>专属特权</p>
+			</div>
+			<div>
+				<img src="icon2.png" alt="">
+				<p>专属特权</p>
+			</div>
+			<div>
+				<img src="icon3.png" alt="">
+				<p>专属特权</p>
+			</div>
+			<div>
+				<img src="icon4.png" alt="">
+				<p>专属特权</p>
+			</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div id="top">
+			<a href="">网友讨论圈</a>	
+			<a class="active" href="">晒单贴</a>	
+			<a href="">讨论帖</a>	
+			<a href="">问答贴</a>	
+			<a href="">圈子贴</a>	
+		</div>
+	</body>
+</html>

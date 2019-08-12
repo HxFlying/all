@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			input{width:50px;height:50px;}
+			#t1{margin-top:100px;}
+/*			img{*/
+/*				width:100px;height:100px;*/
+/*				border:solid;*/
+/*				box-shadow:20px 20px;*/
+/*			}*/
+			#d1{
+				width:800px;
+				border:2px solid #000;
+			}
+			/*每一个img有5px的内边距和2排序的蓝色边框，让四张图片在一行显示*/
+			#d1>img{
+				box-sizing:border-box;
+				width:25%;
+				padding:5px;
+				border:2px solid blue;
+			}
+			#d2{
+				width:300px;height:300px;
+				border:5px solid #f00;
+				padding:10px;
+				margin:20px;
+				box-sizing:border-box;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="d1">
+			<img src="1.jpg"><img src="2.jpg"><img src="3.jpg"><img src="4.jpg">
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div id="d2"></div>
+		<br>
+		<hr>
+		<br>
+		<img src="1.jpg">
+		<input type="text" id="t1">
+		<input type="radio" >
+		<input type="checkbox" >
+	</body>
+</html>

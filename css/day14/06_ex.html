@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			@keyframes liangjump{
+				0%{
+					transform:translateY(0px);
+				}
+				50%{
+					transform:translateY(220px);
+				}
+				100%{
+					transform:translateY(0px);
+				}
+			}
+			#d1{/*16:00~16:15休息*/
+				width:60px;height:60px;
+				background-image:url(chengliang.jpg);
+				background-size:100%;
+				border-radius:50%;
+				position:absolute;
+				top:176px;left:210px;
+				/*动画*/
+				animation:liangjump 1s alternate infinite;
+			}
+			#d2{
+				width:600px;height:600px;
+				background-image:url(kun.jpg);
+				background-repeat:no-repeat;
+				background-size:100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</body>
+</html>

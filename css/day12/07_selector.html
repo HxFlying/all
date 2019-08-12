@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			/*相邻兄弟选择器*/
+/*			p+.c1{color:#f00;}*/
+			/*通用兄弟选择器*/
+/*			#p1~.c1{color:#f00;}*/
+			/*属性选择器*/
+/*			[id="three"][title]{color:#f00;}*/
+/*			[class="c1"]{color:#ff0;}*/
+/*			div[class="c1"]{color:#f00;}*/
+/*			[title="nozuonodie"]{color:#f00;}*/
+				/*模糊属性值查询*/
+/*			[title^="no"]{color:#f00;}*/
+/*			[title$="die"]{color:#f00;}*/
+        [title~="zuo"]{color:#f00;}
+/*      [title*="zuo"]{color:#f00;}*/
+		</style>
+	</head>
+	<body>
+		<p id="p1">大娃</p>
+		<p class="c1" >二娃</p>
+		<span id="three" title="no zuo no die">三娃</span>
+		<b>四娃</b>
+		<p>五娃</p>
+		<div class="c1">六娃</div>
+		<h1 title="no zuo nodie" id="w7">七娃</h1>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			*{margin:0;padding:0;}
+			#content{
+				width:1000px;
+				margin:0 auto;
+				display:flex;/*变成弹性容器*/
+				flex-wrap:wrap;/*空间不够，换行*/
+				justify-content:space-between;/*两端对齐*/
+			}
+			#content>div{background:#ddd;
+				margin-bottom:10px;
+			}
+			#content>div:first-child{
+				width:609px;height:377px;
+			}
+			#content>div:nth-child(2){
+				width:381px;height:377px;
+			}
+			#content>div:nth-child(3){
+				width:377px;height:233px;
+			}
+			#content>div:nth-child(4){
+				width:198px;height:233px;
+			}
+			#content>div:nth-child(5){
+				width:198px;height:233px;
+			}
+			#content>div:nth-child(6){
+				width:198px;height:233px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

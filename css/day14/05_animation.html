@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			/*定义动画*/
+			@keyframes ffyy{
+				0%{
+					background:#f00;border-radius:0;
+				}
+				25%{
+					background:#0f0;border-radius:50%;
+				}
+				50%{
+					background:#00f;border-radius:0;
+				}
+				75%{
+					background:#0ff;border-radius:50%;
+				}
+				100%{
+					background:#00f;border-radius:0;
+				}
+			}
+			div{
+				width:200px;height:200px;
+				/*调用动画的名称*/
+/*				animation-name:ffyy;*/
+				/*动画执行的时间*/
+/*				animation-duration:3s;*/
+				/*设置动画的时间曲线函数*/
+/*				animation-timing-function:linear;*/
+				/*延迟执行*/
+/*				animation-delay:0s;*/
+				/*动画的播放次数*/
+/*				animation-iteration-count:infinite;*/
+/*				/*动画的播放顺序*/
+/*				animation-direction:alternate;*/
+			animation:ffyy 4s linear 1s 1 reverse;
+				/*动画播放前后的状态*/
+				animation-fill-mode:both;
+			}
+			div:hover{
+				animation-play-state:paused;
+			}
+		
+		</style>
+
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			div{width:200px;height:200px;
+				background:#0ff;
+				/*让css的值，在一段时间内平缓的变化*/
+				/*1.指定过渡的属性*/
+/*				transition-property:all;*/
+				/*2.过渡持续的时间*/
+/*				transition-duration:3s;*/
+				/*3.过渡时间曲线函数*/
+/*				transition-timing-function:ease-in-out;*/
+				/*4.延迟执行*/
+/*				transition-delay:0s;*/
+				/*简写方式*/
+				transition:4s;
+			}
+			div:hover{
+				background:#f00;
+				border-radius:50%;
+				transform: translateX(1600px) ;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

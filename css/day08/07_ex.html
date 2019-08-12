@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			#d1 .c2 span{color:yellow;}
+			.c1 #d2 span{color:blue;}
+			div .c2 #d3{color:red;}
+			div,p,#d1,#d2,span,.c1,.c2{color:red;}
+			div>div>div>div>div>div>div>div>div>div>div{color:red;}/*9*/
+			.c4{color:purple;}/*10*/
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<div>
+								<div>
+									<div>
+										<div>
+											<div>
+												<div class="c4">1111111</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="d1" class="c1">
+			<p id="d2" class="c2">
+			  <span id="d3" class="c3">权值的计算</span>
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style>
+			.d1{
+				width:200px;height:200px;
+				/*线性渐变15:00~15:15休息*/
+				background-image:linear-gradient(0deg,#000 0%,#ff0 25%,#000 50%,#0ff 75%,#000 100%);
+			}
+			.d2{
+				width:200px;height:200px;
+				/*径向渐变*/
+				background-image:radial-gradient(100px at center center,#000 0px,#0ff 100px,#000 200px,#0ff 300px,#000 400px);
+			}
+			.d3{
+				width:200px;height:200px;
+				/*线性重复渐变*/
+				background-image:repeating-linear-gradient(45deg,#000 0px,#ff0 10px,#000 20px,#0ff 30px,#000 40px);
+			}
+			.d4{
+				width:200px;height:200px;
+				/*径向重复  16:05~16:20休息*/
+				background-image:repeating-radial-gradient(50px at center center,#000 0px,#0ff 10px,#000 20px,#ff0 30px,#000 40px);
+			}
+			.d5{
+				width:200px;height:200px;
+				/*兼容低版本浏览器的写法*/
+				background:-webkit-linear-gradient( bottom,#f00,#00f);
+				background:-ms-linear-gradient( bottom,#f00,#00f);
+				background:-o-linear-gradient( bottom,#f00,#00f);
+				background:-moz-linear-gradient( bottom,#f00,#00f);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d5"></div>
+		<br>
+		<hr>
+		<br>
+		<div class="d4"></div>
+		<br>
+		<hr>
+		<br>
+		<div class="d3"></div>
+		<br>
+		<hr>
+		<br>
+		<div class="d2"></div>
+		<br>
+		<hr>
+		<br>
+		<div class="d1"></div>
+	</body>
+</html>
