@@ -1,0 +1,23 @@
+/*背景颜色*/
+body{background-color:#eeeeee}
+
+/*背景颜色*/
+.bg_color{background: #025a9d;}
+
+.bg_color:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.magin_left{margin-left: 10rem}
+
+/* 最下面div样式 */
+.div_bottom{background:#0066b3;height:10rem; }
+/*  最下面字体样式*/
+.top_text{font-size: 14px;
+           color: #fff;
+
+}
+.under_pm{margin: 0rem;padding: 0rem;
+             width: 72.5rem;
+}
