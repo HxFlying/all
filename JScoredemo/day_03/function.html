@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //封装函数
+      function cook(obj){
+        if(obj.cai===undefined){
+            obj.cai="青菜";
+        }
+        if(obj.rou===undefined){
+            obj.rou="肉丝";
+        }
+        if(obj.mifan===undefined){
+            obj.mifan="大米饭"
+        }
+        console.log(`电饭锅煮${obj.mifan}`);
+        console.log(`切好${obj.rou}`);
+        console.log(`锅中加油放入${obj.rou}`);
+        console.log(`${obj.rou}抄的差不多加入${obj.cai}`);  
+        console.log(`${obj.rou}炒${obj.cai}就${obj.mifan}好了`);
+        return(`热腾腾的${obj.rou}炒${obj.cai}就${obj.mifan}`);
+      }
+       var wan=cook({cai:"胡萝卜",rou:"牛肉",mifan:"面条"});
+        console.log(`一碗${wan}ok`); 
+
+        var wan=cook({rou:"鸡蛋"});
+        console.log(`一碗${wan}ok`); 
+        
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //RegExp对象
+     var arr=["白鹭", "晴天", "明月"];
+     
+     var reg=new RegExp(arr.join("|"));
+     var msg=prompt("请输入一条信息")
+     var i=msg.search(reg);
+     if(i!=-1){
+           document.write("您输入的内容包含敏感信息");
+
+
+     }else{
+        document.write(`王二说:${msg}`);
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    </script>
+</body>
+</html>

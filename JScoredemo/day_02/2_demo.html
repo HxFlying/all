@@ -1,0 +1,26 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // 屏蔽用户 在聊天记录中微信敏感词，及其变种
+      //先请用户输入，检查消息是否包含敏感词
+      var msg=prompt("请输入一条内容");
+      //微信的正则，微或者wei，其中ei可有可无，最多一次--(微|w(ei)?)
+      var i=msg.search(/(微|w(ei)?)\s*(信|x(xin)?)/i);
+      if(i!=-1){
+            
+             document.write("<h1 style='color:red'> 包含敏感词</h1>"); 
+}
+    else{
+        document.write(`冉哥说:${msg}`);
+    }
+    </script>
+</body>
+</html>

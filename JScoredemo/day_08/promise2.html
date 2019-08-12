@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+        </head>
+        <body>
+            <script>
+              function liang(){
+                  
+                  return new Promise(
+                    function(door,err){
+                        var odel=["天涯宝石"];
+                        console.log(`亮拿着 ${odel} 开始跑`);
+                        setTimeout(function(){
+                         if(Math.random()<0.6){ 
+                        console.log(`亮拿着 ${odel} 到达终点`),
+                        door(odel);}
+                        else{
+                            console.log(`呀！亮摔倒了！!!`);
+                            err("亮摔倒了");
+                        }
+                        }
+                        ,6000)
+                    }
+                )
+        }
+            function ran(odel){
+                return new Promise(function(door){
+                      console.log(`然拿着开始跑`);
+                      setTimeout(function(){
+                      console.log(`然拿着到达终点`)
+                      door(odel)},3000);
+        
+                })
+            }
+        
+            function dong(odel){
+                return new Promise(function(door){
+                      console.log(`东拿着 开始跑`);
+                      setTimeout(function(){
+                      console.log(`东拿着 跑步结束`),
+                      door()},4000);
+        
+                })
+            }
+            (async function(){
+                try{
+                 var   odel=await liang();
+                       odel=await ran(odel);
+                            await dong(odel);
+                 console.log(`跑步结束`);
+        
+              }catch(err){
+                console.log(err);
+                console.log("集体退赛");
+            }  
+            })();
+            </script>
+        </body>
+        </html>
+    </body>
+</html>

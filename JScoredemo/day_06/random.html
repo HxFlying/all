@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //创建一个双色球
+      var reds=[];blues=[];
+     while(reds.length<5){
+         var  red=Math.ceil(Math.random()*35);
+          if(reds.indexOf(red)==-1){
+              reds.push(red);
+          }//否则继续执行
+        }
+        // 将红球升序排列：
+          reds.sort(function(a,b){ return a-b});
+          //将红球转成字符串
+          reds=reds.toString();
+            console.log(reds);
+        //输出绿球
+        while(blues.length<2){
+         var  blue=Math.ceil(Math.random()*12);
+          if(blues.indexOf(blue)==-1){
+              blues.push(blue);
+          }//否则继续执行
+        }
+        //将绿球排序
+        blues.sort(function(a,b){ return a-b});
+        
+          blues=blues.toString();
+            console.log(blues);
+       
+        
+     
+        //输出红球和绿球
+        document.write(`<h2 style="color:red">大乐透幸运号:${reds},<span style="color:blue">${blues}</span></h2>`);   
+
+    </script>
+</body>
+</html>

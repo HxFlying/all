@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function liang(){
+  return new Promise(
+    function(door,err){
+      var bang="亮的接力棒";
+      console.log(`亮 拿着${bang} 起跑...`);
+      setTimeout(function(){
+        if(Math.random()<0.6){
+          console.log(`亮 拿着${bang} 到达终点!`);
+          //2. 在异步函数最后一句话执行完，开门通知下一个人可以开始执行。
+          console.log(`亮开门！把${bang}交给下一个人`)
+          door(bang);
+        }else{
+          console.log(`呀！亮摔倒了！！！`);
+          err("亮摔倒了");
+        }
+      },6000)
+    }
+  )
+}
+
+function ran(bang){
+  return new Promise(
+    function(door,err){
+      console.log(`然 拿着${bang} 起跑...`);
+      setTimeout(function(){
+        if(Math.random()<0.6){
+          console.log(`然 拿着${bang} 到达终点!`);
+          //2. 在当前异步任务结束后，自动调用开关door()开门通知下一个函数可以开始执行
+          console.log(`然开门！把${bang}交给下一个人`)
+          door(bang)
+        }else{
+          console.log(`呀！然摔倒了！！！`);
+          err("然摔倒了");
+        }
+      },2000)
+    }
+  )
+}
+
+function dong(bang){
+  return new Promise(
+    function(door){
+      console.log(`东 拿着${bang} 起跑...`);
+      setTimeout(function(){//异步!
+        console.log(`东 拿着${bang} 到达终点!`)
+        console.log("东开门!")
+        door();
+      },4000)
+    }
+  )
+}
+/*(async function(){
+  try{
+    var bang=await liang();
+            //door就相当于return bang
+            //await代替了.then()
+    bang=await ran(bang);
+    await dong(bang);
+    console.log("比赛结束");
+  }catch(err){//代替了.catch()
+    console.log(err);
+    console.log("集体退赛!");
+  }
+})();*/
+
+/*liang()
+.then(ran)
+.then(dong)
+.then(function(){
+  console.log("比赛结束")
+})
+.catch(function(err){
+  console.log(err);
+  console.log("集体退赛!")
+})*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //创建一个双色球
+      var reds=[];
+     while(reds.length<6){
+         var  red=Math.ceil(Math.random()*33);
+          if(reds.indexOf(red)==-1){
+              reds.push(red);
+          }//否则继续执行
+        }
+        // 将红球升序排列：
+          reds.sort(function(a,b){ return a-b});
+          //将红球转成字符串
+          reds=reds.toString();
+            console.log(reds);
+        //输出绿球
+        var blue=Math.ceil(Math.random()*16);
+        console.log(blue); 
+        //输出红球和绿球
+        document.write(`<h2 style="color:red">亿万幸运号:${reds},<span style="color:blue">${blue}</span></h2>`);   
+
+    </script>
+</body>
+</html>

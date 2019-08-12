@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function add(){
+    //arguments[  ].length 
+    //          0 1 2 3..
+    //定义变量保存每次累加的和    
+       var  sum=0;
+       //遍历arguments中每一个实参值
+       for(var i=0;i<arguments.length;i++){
+           //每遍历一个实参值，就累加到sum上
+            sum+=arguments[i];     
+       }
+       //返回sum
+       return sum; 
+      }
+        
+        console.log(add(2,8,9))
+       </script>
+</body>
+</html>

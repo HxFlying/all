@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var t=0;//准备累加每个任务函数执行的时间
+function task1(){
+  console.log(`任务1耗时0.3s`);
+  t+=0.3;
+}
+function task2(){
+  console.log(`任务2耗时0.8s`);
+  t+=0.8;
+
+  var err=true;//模拟出错的变量
+  //如果出错
+  if(err==true){//let将if{}也变成了一级作用域！实体墙！
+  //(function(){//let自动加的
+    //let t=123;//报错
+    //console.log(t);//报错！
+    //就获得出错的时间
+    //let阻止了局部的t被声明提前
+    let t=new Date(); //_t
+    //并输出出错的提示日志
+    console.log(`出错啦,at:${t.toLocaleDateString()}`);//_t
+  //})();//let自动加的
+  }
+}
+task1();
+task2();
+console.log(`共耗时${t}s`);
+</script>
+</body>
+</html>

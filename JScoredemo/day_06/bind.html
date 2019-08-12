@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function clac(a,b,c ){
+         console.log(`${this.ename}的工资是${a+b+c}`)
+     }   
+     var hmm={
+         ename:"韩梅梅",
+         intrSelf:"功夫不负有心人",
+         toString:function(){
+             console.log(`{ename:${this.ename},intrSelf:${this.intrSelf}}`)
+         }
+
+     }
+     var lilei={
+         ename:"李磊",
+
+     }
+     var arr=[10,10,10000];
+     clac.apply(hmm,arr)
+     lclac=clac.bind(lilei,1209);
+     lclac(5000,1000);
+     clac.call(hmm,5000,1000,2000)
+     hmm.toString()
+ 
+
+    </script>
+</body>
+</html>

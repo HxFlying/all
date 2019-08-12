@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var  str="小红，小明，小亮，是一个班的同学";
+    var  num=str.match(/小[\u4e00-\u9fa5]/g);  
+    var  str=str.replace(/小[\u4e00-\u9fa5]/g,"*");
+    console.log(`共替换${num["length"]}${str}`);
+
+   </script>
+</body>
+</html>

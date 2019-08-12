@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //降落伞和飞机   
+    //定义共有的的属性：x,y构造函数
+     class enemy {
+         constructor(x,y){
+             this.x=x;
+             this.y=y;
+         }
+         fly(){console.log(`在位置X:${this.x}y:${this.y}`)}
+     }
+     //伞的定义
+     class san extends enemy{
+         constructor(x,y,award){
+             super(x,y);
+             this.award=award;
+             
+         }
+          getaward(){
+              console.log(`在X:${this.x},y:${this.y}获得${this.award}`)
+          }
+     }
+      
+       var s1=new san (20,20,"one life");
+       console.log(s1);
+       s1.getaward();
+       s1.fly();
+
+     
+    
+    </script>
+</body>
+</html>

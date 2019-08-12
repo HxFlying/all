@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //设置某个对象的属性不能修改
+      //创建一个对象
+      var obj={
+          sname:"埃里克",
+          sage:17
+      }
+    
+      Object.defineProperty(obj,"sage",{writable:false})
+      obj.sage=18;
+      console.log(obj.sage);
+    </script>
+</body>
+</html>

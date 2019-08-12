@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 函数重载，利用arguments
+    //模拟收银，①现金支付，②手机支付，③刷卡支付
+    //创建函数
+    function pay(){
+     //判断传入参数长度
+     //参数为二刷卡支付
+     if(arguments.length==2){
+       console.log(`您的卡号${arguments[0]}成功扣款！...`);
+     }
+     //参数一位手机支付
+     else if(arguments.length==1){
+        console.log(`现金支付${arguments[0]}`);
+     }
+     //现金支付
+     else {
+        console.log(`手机支付..`);  
+     }
+
+
+    }
+
+    
+    pay("6552123 122","454222");
+    pay();
+    pay(100);
+    
+    </script> 
+</body>
+</html>

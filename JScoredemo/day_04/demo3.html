@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //创建一个学生对象lilei;
+     //姓名:li lei
+     //年龄：11
+     //会自我介绍：I`m Li Lei，I`m 11
+    var lilei={
+     //创建一个新对象的意思
+     sname:"Li Lei",
+     sage:11,
+     intrSelf:function(){
+     console.log(`I'm ${this.sname},I'm ${this.sage}`) 
+
+     }
+     
+
+    }
+    //再创建一个对象hmm
+    var hmm={
+       sname:"hanmeimei",
+       sage:12
+
+    }
+     hmm.intrSelf=lilei.intrSelf;
+     hmm.intrSelf();
+    console.log(`lilei的年龄是：${lilei.sage}`)
+    lilei.intrSelf();
+    console.log("过了一年，lilei涨了一岁");
+    lilei.sage++;
+    console.log(`lilei的年龄是${lilei.sage}`);
+    lilei.intrSelf();
+    </script>
+
+
+</body>
+</html>

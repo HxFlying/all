@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //创建一个student构造函数
+      function Student(sname,sage){
+       this.sname=sname,
+       this.sage=sage
+       }
+      //创建子集的原型对象
+      Student.prototype.intrSelf=function(){
+          console.log(`I'm${this.sname},I'm${this.sage}`)
+      }
+      //创建新的一个原型对象
+      var father={
+          pay:10000000,
+          car:"infinite"
+      }
+     //创建两个子对象
+     var lilei=new Student("LiLei",12)
+     var hmm=new Student("hanmeimei",18)
+     //换掉hmm的原型对象
+     Object.setPrototypeOf(hmm,father);
+    
+     lilei.intrSelf()
+    
+     console.log(hmm.car);
+    
+    </script>
+</body>
+</html>

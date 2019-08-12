@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//this->window
+var lilei={//对象的{}不是墙
+  sname:"Li Lei",
+  friends:["jack","rose","tom","jerry"],
+  intrSelf:function(){
+    this.friends.forEach(
+      fname=>console.log(`${this.sname} 认识 ${fname}`)
+      //.bind(this) //只要回调函数中的this错了！只能用bind换！
+      //交给主函数的，已经不是原函数。而是一个bind创建的副本，且永久替换了this。主函数可以尽情反复使用！
+    )
+  }
+}
+lilei.intrSelf();
+</script>
+</body>
+</html>

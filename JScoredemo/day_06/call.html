@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function clac(a,b,c ){
+         console.log(`${this.ename}的工资是${a+b+c}`)
+     }   
+     var hmm={
+         ename:"韩梅梅",
+
+     }
+     clac.call(hmm,5000,1000,2000)
+     var ename=prompt("请输入您的姓名");
+     var a=prompt("请输入您的工资");
+     var b=prompt("请输入您的工资");
+     var sum=parseInt(a)+parseInt(b);
+     document.write(`${ename}的工资是${sum}`);
+
+    </script>
+</body>
+</html>

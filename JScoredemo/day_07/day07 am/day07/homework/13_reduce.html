@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//鄙视: 统计一个字符串中每个字符出现的个数。哪个字母出现次数最多，是几次？
+var str="helloworld";
+var arr=str.split("");
+var result=arr.reduce(
+  function(prev,elem){
+    //prev:{h:1, e:1, l:2, o:1, w:1}
+    //        elem:"o"
+    //如果prev中没有这个字母的属性
+    if(prev[elem]===undefined){
+      prev[   elem     ]=1;
+    //prev[    "o"     ]=1
+    }else{//否则，就+1
+      prev[elem]+=1;
+    //prev["o" ]
+    //       1  +=1
+    //       2
+    }
+    //prev:{h:1, e:1, l:2, o:2, w:1}
+    return prev
+  },
+  {}//prev
+)
+console.log(result);
+/*{
+  h:1,
+  e:1,
+  l:3,
+  o:2,
+  ...,
+}*/
+/*添加一段代码: */
+(function(){
+  var char,count;
+  //遍历result中每个成员
+  for(var key in result){
+    //     h     result[key]=1
+    //第一次，没有最多次数的字母时，第一个看到的字母和它的次数，暂时作为最多，保存在变量中。
+    if(char===undefined){
+      char=key;
+      count=result[key];
+    }else{//之后每次
+      //如果新的字母的数量大于现在处于最多次数的字母的次数
+      if(result[key]>count){
+        //就取而代之，保存在变量中，作为临时的出现次数最多的字母。
+        char=key;
+        count=result[key];
+      }
+    }
+  }
+  console.log(`${char} 出现次数最多，共出现${count}次`)
+})();
+</script>
+</body>
+</html>

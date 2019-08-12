@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //修改首字母大小
+        var str="you can you up no can no zuo";
+        var num=str.match(/\b[a-z]/ig);
+
+        var str=str.replace(/\b[a-z]/ig,function(keyword){
+                return keyword.toUpperCase();
+
+        });
+       
+        console.log(`共替换${num.length}处`);
+        console.log(str);
+        
+        
+        </script>
+</body>
+</html>

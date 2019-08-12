@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function liang(){
+        return new Promise(
+            function(door){
+                var bang="圆月弯刀";
+                console.log(`亮拿着${bang}开始跑`);
+                setTimeout(function(){ console.log(`亮到达终点`)
+                door(bang);
+            },3000);
+               
+            }
+        )
+}
+    function ran(){
+        return new Promise(function(door){
+            var bang="屠龙刀"
+              console.log(`然拿着${bang}开始跑`);
+              setTimeout(function(){console.log(`然到达终点`);
+              door(bang);
+            },2000);
+              
+
+        })
+    }
+
+    function dong(){
+        return new Promise(function(door){
+            var bang="倚天剑"
+              console.log(`东拿着${bang}开始跑`);
+              setTimeout(function(){ console.log(`东跑步结束`);
+              door(bang);
+            },1000);
+             
+
+        })
+    }
+    Promise.all([//必须传入new promise 对象
+    
+    ran(),
+    liang(),
+    dong()
+    ])
+.then(arr=>console.log(arr));
+</script>
+</body>
+</html>

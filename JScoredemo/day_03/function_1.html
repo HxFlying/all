@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+<script>
+    //匿名函数自调用
+    (function(){ var start=new Date();
+    alert(`欢迎来到我的第一个页面${start.toLocaleString()}`);})();
+    
+   
+    (function(){var end=new Date();
+    alert(`加载完成${start.toLocaleString()}`);})();
+    </script>
+      <h1>欢迎来到我的第一个页面</h1>
+</body>
+</html> 

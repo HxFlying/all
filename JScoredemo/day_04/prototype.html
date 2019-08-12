@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用构造函数定义对象结构
+        function Student(sname,sage){
+          this.sname=sname,
+          this.sage=sage
+          }
+          //原型创建子集共同需要的变量
+         Student.prototype.intrSelf=function(){
+             console.log(`I'm ${this.sname} I'm ${this.sage}`);
+         }
+         //引用构造函数，创建3个对象
+         var lilei= new Student("LiLei",12);
+         var hmm=new Student("hanmeimei",11);
+         var lily=new Student("Lily",12);
+         console.log(lilei);
+         lilei.intrSelf();
+         console.log(hmm);
+         hmm.intrSelf();
+         console.log(lily);
+         lily.intrSelf();
+         console.log(lilei.__proto__==hmm.__proto__);
+         console.log(hmm.__proto__==lily.__proto__);
+         //共有属性和自有属性
+         //给原有模型添加一个属性
+         Student.prototype.className="初二三班";
+      
+         //不能单独修改共有属性
+         lilei.className="六年级";
+         //输出三个同学对象
+         console.log(lilei);
+         console.log(hmm);
+         console.log(lily);
+        </script>
+      </body>
+</html>

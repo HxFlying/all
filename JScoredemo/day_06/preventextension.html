@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //阻止对对象的可拓展
+      "use strict";
+      var James={
+          name:"詹姆斯",
+          age:18,
+          salary:12000
+
+      }
+      Object.defineProperty(James,"salary",{
+          writable:true
+      })
+      Object.preventExtensions(James);
+      James.make="maike";
+       James.salary=100;
+       console.log(James)
+    
+    </script>
+    
+</body>
+</html>

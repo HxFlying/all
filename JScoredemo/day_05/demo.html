@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //重写练习
+      // 申明创建 date array object
+      var time=new Date();
+      var arr=[1,2,3];
+      var obj={sname:"Li Lei",sage:18,
+      //定义一个“重写”tostring
+      toString:function(){
+        return `{${this.sname},${this.sage}}`
+
+      }
+      }
+      console.log(time.toString());
+      console.log(arr.toString());
+      console.log(obj.toString());
+    
+    </script>
+</body>
+</html>

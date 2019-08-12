@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var t=0;//准备累加每个任务函数执行的时间
+function task1(){
+  console.log(`任务1耗时0.3s`);
+  t+=0.3;
+}
+function task2(){
+  //var t;//undefined
+  //如果在task2()中已经有了局部变量t
+  //就绝不会用全局的t了
+  console.log(`任务2耗时0.8s`);
+  //这个0.8没有加到全局t，而是加在局部t上，当函数调用后，局部的t也就释放了
+  t+=0.8;
+
+  var err=false;//模拟出错的变量
+  //如果出错
+  if(err==true){//if eles for while do while 等程序结构的{}不是作用域，不是实体墙，拦不住var
+    //就获得出错的时间
+    var t=new Date();
+    //并输出出错的提示日志
+    console.log(`出错啦,at:${t.toLocaleDateString()}`);
+  }
+}
+task1();
+task2();
+console.log(`共耗时${t}s`);
+</script>
+</body>
+</html>
