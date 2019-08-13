@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //判断谷歌浏览器是否有插件
+       var  plugins=navigator.plugins;
+       if(plugins["Chrome PDF Viewer"]===undefined){
+           document.write(`<h1>您未安装插件，<a href="javascript:;">点此安装</a></h1>`)
+       }
+       else{
+           document.write(`<h1>您已安装PDF插件</h1>`);
+       }
+    
+    </script>
+</body>
+</html>

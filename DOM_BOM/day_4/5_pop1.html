@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>在当前显示区范围内实现点不到的小方块</title>
+	<style>
+		div{position:fixed;width:100px;height:100px;
+			background-image:url(images/xiaoxin.gif);
+      background-size:100%;
+		}
+	</style>
+	
+ </head>
+<body>
+<div id="pop"></div>
+<script>
+//当在图片上鼠标按下时，打开开关，允许跟着鼠标走
+var canMove=false;
+var offsetX,offsetY;
+pop.onmousedown=function(e){
+	canMove=true;
+	offsetX=e.offsetX;
+	offsetY=e.offsetY;
+}
+//当鼠标在window内移动时，随时获得鼠标的实时位置，并根据鼠标的位置实时计算图片的top和left位置
+var POP_WIDTH=100;
+window.onmousemove=function(e){
+	if(canMove==true){
+		var x=e.clientX;
+		var y=e.clientY;
+		var left=x-offsetX;
+		var top=y-offsetY;
+		//最大的left值为窗口宽-图片宽
+		var MAX_LEFT=innerWidth-POP_WIDTH;
+		if(left<0){
+			left=0;
+		}else if(left>MAX_LEFT){
+			left=MAX_LEFT;
+		}
+		var MAX_TOP=innerHeight-POP_WIDTH;
+		if(top<0){
+			top=0;
+		}else if(top>MAX_TOP){
+			top=MAX_TOP;
+		}
+		pop.style.left=left+"px";
+		pop.style.top=top+"px";
+	}
+}
+//当在图片上鼠标抬起时，关闭开关，禁止跟着鼠标移动
+pop.onmouseup=function(){
+	canMove=false;
+}
+</script>
+</body>
+</html>
