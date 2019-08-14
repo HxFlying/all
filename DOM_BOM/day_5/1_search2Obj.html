@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//location.search
+var search="?uname=dingding&upwd=123456&favs=swimming&favs=running&favs=basketball";
+function search2Obj(str){
+  //创建新的空对象
+  var obj={};
+  //去掉str开头的?
+  str=str.slice(1);
+  //"uname=dingding&upwd=123456&favs=swimming&favs=running&favs=basketball"
+  //按&切割str
+  var arr=str.split("&");
+  //["uname=dingding","upwd=123456","favs=swimming","favs=running","favs=basketball"]
+  //遍历arr中每个子字符串
+  for(var s of arr){
+    //按=切割每个子字符串，然后，将切割后第一部分保存在变量key中，将切割后第二部分保存在变量value中
+    var [key,value]=s.split("=");
+    //如果obj中不包含key为下标的属性
+    if(obj[key]===undefined){
+      //就前行给obj添加key为下标的属性，并赋值
+      obj[key]=value;
+    }else{//否则，如果obj中已包含key为下标的属性
+      //就取出obj中key属性的值，和新值value拼成一个新数组，再放回obj中key属性保存
+      obj[key]=[].concat(obj[key],value);
+    }
+  }
+  return obj;//返回obj
+}
+var obj=search2Obj(search);
+console.log(obj);
+/*obj:{
+  uname:dingding,
+  upwd:123456,
+  favs:[swimming, running, basketball]
+}*/
+</script>
+</body>
+</html>

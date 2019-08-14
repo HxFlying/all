@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的属性</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/3.css" />
+<style></style>
+
+</head>
+<body>
+	<h2>实现多标签页效果</h2>
+  <div class="tabs">
+    <ul id="tab">
+      <li><a href="javascript:;" data-click="tab" data-id="content1">10元套餐</a></li>
+      <li><a href="javascript:;" data-click="tab" data-id="content2">30元套餐</a></li>
+      <li><a href="javascript:;" data-click="tab" data-id="content3">50元包月</a></li>
+    </ul>
+    <div id="container">
+      <div id="content1" style="z-index:9">
+        10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+      </div>
+      <div id="content2">
+        30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+      </div>
+      <div id="content3">
+        50元包月详情：<br />&nbsp;每月无限量随心打
+      </div>
+    </div>
+  </div>
+<script>
+//因为多个tab都要绑定单击事件，所以应该用事件委托来优化减少监听对象的个数
+//1. 事件绑定在父元素上
+var ulTab=document.getElementById("tab");
+//先定义一个全局变量index=10，用来累计现在zIndex的数值
+var index=10;
+ulTab.onclick=function(e){
+  //2. 只有有data-click属性，且 属性值为tab的元素才能出发事件
+  //if(e.target.getAttribute("data-click")=="tab"){
+  if(e.target.dataset.click=="tab"){
+    //3. 查找触发事件的元素
+    //先获得当前tab
+    var tab=e.target;//不要用this;
+    //先从当前tab的data-id属性中获得当前tab对应div的id
+    var id=tab.getAttribute("data-id");
+        //或tab.dataset.id
+    //用id查找当前tab对应的div
+    var div=document.getElementById(id);//不加""，因为id是前边一个变量
+    //修改当前tab对应的div的zIndex为更大的一个数
+    div.style.zIndex=index++;
+  }
+}
+</script>
+</body>
+</html>

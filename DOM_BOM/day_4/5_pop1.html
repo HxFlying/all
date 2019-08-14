@@ -46,11 +46,13 @@ window.onmousemove=function(e){
 		pop.style.left=left+"px";
 		pop.style.top=top+"px";
 	}
+    //当在图片上鼠标抬起时，关闭开关，禁止跟着鼠标移动
+
 }
-//当在图片上鼠标抬起时，关闭开关，禁止跟着鼠标移动
-pop.onmouseup=function(){
+pop.onmouseout=function(){
 	canMove=false;
 }
+
 </script>
 </body>
 </html>
