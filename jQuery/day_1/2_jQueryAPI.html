@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>jQueryAPI特点</h1>
+  <button id="btn1">click me(0)</button>
+  <button id="btn2">click me(0)</button>
+  <button id="btn3">click me(0)</button>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //为三个按钮绑定单击事件，记录单击次数
+    var $btns=$("button");
+    $btns.click(function(){
+      alert("疼");
+    })
+
+    //var btns=$("button");
+    
+    //2. 使用$工厂函数查询元素为button的一个按钮，封装在jQuery对象中，并查看jQuery对象结构: 
+      $btns.click(function(){
+        
+    //3. 使用简化版API为$btn绑定单击事件:修改按钮的点击次数
+       var btnSelf=$(this);
+
+
+      //4. 使用$工厂函数包装e.target, 使用简化版API完成功能
+           var html=btnSelf.html()
+
+           n=parseInt(html.slice(9,-1));
+           n++;
+
+           btnSelf.html(`click me(${n})`);
+
+    
+    }
+  
+    )
+    
+  </script>
+</body>
+</html>
