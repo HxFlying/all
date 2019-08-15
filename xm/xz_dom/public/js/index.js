@@ -40,4 +40,4 @@
     console.log(html);
     document.getElementById("others").innerHTML=html;
   })
-})()
+})();
