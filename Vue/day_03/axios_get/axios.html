@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        用户名:<input type="text" v-model="uname" placeholder="请输入您的用户名"><br>
+        密码：<input type="text" v-model="upwd" placeholder="请输入您的密码">
+         <button @click="login">登录</button>
+</div>
+</body>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            uname:"dingding",
+            upwd:"123456"
+        },
+        methods:{
+             login(){
+                 axios.get(
+                     "http://localhost:3000",
+                     {
+                         params:{
+                             uname:this.uname,
+                             upwd:this.upwd
+                         }
+                     }
+                 ).then(result=>{
+                     if(result.data.code==1){
+                         alert("登录成功");
+                     }else{
+                         alert("用户名或密码不正确")
+                     }
+                     this.uname="";
+                     this.upwd="";
+                 })
+             }
+        }
+    })
+
+      
+</script>
+</html>

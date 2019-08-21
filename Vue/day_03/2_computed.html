@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>总计: ¥{{total.toFixed(2)}}</h1>
+  <ul @click="del">
+    <li v-for="(item,index) of cart" :key="index"><input type="checkbox" v-model="item.is_checked"> | {{item.pid}} | {{item.pname}} | ¥{{item.price.toFixed(2)}} | {{item.count}} | 小计:¥{{(item.price*item.count).toFixed(2)}} |<button :data-i="index">x</button></li>
+  </ul>
+  <h1>总计: ¥{{total.toFixed(2)}}</h1>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    cart:[
+      {pid:1, pname:"华为", price:5000, count:2, is_checked:true},
+      {pid:2, pname:"小米", price:3000, count:1, is_checked:true},
+      {pid:3, pname:"苹果", price:8000, count:3, is_checked:false}
+    ]
+  },
+  methods:{
+    del(e){
+      if(e.target.nodeName=="BUTTON"){
+        var i=parseInt(
+          e.target.dataset.i
+        )
+        this.cart.splice(i,1);
+      }
+    }
+  },
+  watch:{},
+  computed:{
+    total(){//计算属性的本质其实是一个特殊的函数
+      console.log("计算了一次总价！")
+      /*var total=0;
+      for(var item of this.cart){
+        if(item.is_checked){
+          total+=item.price*item.count
+        }
+      }
+      return total;*/
+      /*return this.cart.filter(
+          function(item){
+            return item.is_checked==true;
+          }
+        ).reduce(
+          function(prev,item){
+            return prev+item.price*item.count
+          }
+        )
+        ,
+        0
+      );*/
+      return this.cart.filter(item=>item.is_checked).reduce(
+        (prev,item)=>prev+item.price*item.count
+        ,
+        0
+      );
+    }
+  }
+})
+</script>
+</body>
+</html>
