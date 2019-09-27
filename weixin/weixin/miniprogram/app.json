@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/xz02/xz02",
+      "pages/detail/detail",
+      "pages/profile/profile",
+      "pages/map/map",
+      "pages/mymovie/mymovie",
+      "pages/movieDetail/movieDetail"
+      
+   
+  
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+     "navigationBarTitleText": "豆瓣评分",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#d1d1d1",
+    "selectedColor":"#333333",
+    "list": [{
+      "pagePath": "pages/xz02/xz02",
+      "text": "电影",
+      "iconPath": "images/dy1.png",
+      "selectedIconPath": "images/dy.png"
+    },{
+      "pagePath": "pages/profile/profile",
+      "text": "个人中心",
+      "iconPath": "images/ren1.png",
+      "selectedIconPath": "images/ren.png"
+    },
+    {
+      "pagePath": "pages/mymovie/mymovie",
+      "text": "喜欢",
+      "iconPath": "images/xh0.png",
+      "selectedIconPath": "images/xhsel.png"
+    },
+    {
+      "pagePath": "pages/map/map",
+      "text": "地图",
+      "iconPath": "images/map1.png",
+      "selectedIconPath": "images/map.png"
+    }
+
+    
+    ]
+  }
+
+  
+  
+  
+}

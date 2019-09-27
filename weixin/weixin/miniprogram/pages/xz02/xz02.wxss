@@ -1,0 +1,59 @@
+/* 电影列表样式*/
+/* 头标题 */
+.headfont{
+  display: flex;
+  width: 100%;
+  background-color: #00b51d;
+  height: 50px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size:20px; 
+  flex-direction: column;
+  align-items: center;
+ 
+
+}
+.headfont .font{
+ margin-top: 10px;
+}
+
+/* 电影区域 */
+/* 最外层 */
+.movie{
+  display: flex;/*弹性布局*/
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+/* 左侧图片 */
+.movie-img{
+  width: 200rpx; /*图片宽度和高度响应式*/
+  height: 300rpx;
+  margin-right:20rpx;/*右侧图片文字距离*/ 
+}
+/* 电影介绍 */
+.movie-info{
+  /* 将右侧区域填满 */
+  flex:1;
+  font-size:28rpx;
+  line-height: 1.8;/*行高原有文字间距1.8倍*/
+}
+
+/* 电影标题 */
+.movie-title{
+  color: #666;
+  font-size: 40rpx;
+}
+/* 电影评分 */
+.movie-socre{
+  color:#faaf00;
+
+}
+/* 电影按钮详情 */
+.movie-comment{
+  height: 60rpx;
+  background: #00b51d;
+  color:#fff;
+  font-size:26rpx;
+  margin-top: 120px;
+
+}

@@ -1,0 +1,11 @@
+<!--pages/movieDetail/movieDetail.wxml-->
+<!-- 我喜欢的电影列表 -->
+<view class="container" wx:for="{{list}}"
+wx:key="index">
+<!-- 电影的图片列表 -->
+<view>电影图片:{{item.fileIds}}</view>
+<!-- 电影的名称 -->
+<view>电影名称:{{item.moviename}}</view>
+<!-- 评论 -->
+<view>电影评论:{{item.why}}</view>
+</view>
